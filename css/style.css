@@ -1,0 +1,672 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Inter', sans-serif;
+	scroll-behavior: smooth;
+}
+body {
+	color: white;
+}
+
+/* NAWIGACJA */
+
+
+nav {
+	background: #414040e1;
+	height: 8vh;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	position: fixed;
+	z-index: 2;
+}
+.burger {
+	width: 50px;
+	height: 38px;
+	display: flex;
+	margin-right: 1rem;
+	transition: 0.3s linear;
+	position: relative;
+}
+.burger span {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 7px;
+	background-color: white;
+	border-radius: 18px;
+}
+.burger1 {
+	top: 0;
+}
+
+.burger2 {
+	top: 50%;
+	transform: translateY(-50%);
+}
+.burger3 {
+	top: calc(100% - 7px);
+}
+
+.burger.animate {
+	transform: rotate(180deg);
+}
+.burger.animate .burger1 {
+	top: 50%;
+	transition: 0.3s 0.3s;
+	transform-origin: center center;
+	rotate: -45deg;
+}
+.burger.animate .burger2 {
+	opacity: 0;
+	transition: 0.3s 0.3s;
+}
+.burger.animate .burger3 {
+	top: 50%;
+	transition: 0.3s 0.3s;
+	rotate: 45deg;
+}
+.invisibleNav {
+	display: none;
+}
+
+.menu {
+	width: 100%;
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	position: absolute;
+	top: 8vh;
+	left: -100%;
+	background-color: #fae18a;
+	text-align: center;
+	position: fixed;
+	transition: 0.3s linear;
+	z-index: 2;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	padding-top: 1rem;
+	padding-left: 1rem;
+	width: 100%;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.menu.show {
+	opacity: 1;
+	left: 0;
+}
+
+nav.show {
+	background-color: #fae28ab7;
+}
+
+/*HEADER*/
+
+header {
+	position: relative;
+	top: 8vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: black;
+	justify-content: center;
+}
+
+header p {
+	font-size: 1.2rem;
+	display: inline-block;
+	display: flex;
+	align-items: center;
+}
+
+span.material-symbols-outlined {
+	font-size: 30px;
+}
+div.number{
+	display: flex;
+	align-items: center;
+}
+
+header .number a{
+	color: black;
+	font-size: 1.2rem;
+	padding: 0;
+}
+
+/*MAIN*/
+
+.yellowDiv {
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	height: 5vh;
+	background-color: #f7d65f;
+	position: relative;
+	top: 9vh;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/*NAWIGACJA Z KROPKAMI PO LEWEJ STRONIE*/
+
+/* ZDJECIE W TLE*/
+
+.img {
+	height: 73vh;
+	background-image: url('../PiasTech4.jpg');
+	background-size: cover;
+	background-position: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	top: 9vh;
+}
+
+.img h1 {
+	font-size: 3.65em;
+	color: rgba(255, 255, 255, 0.778);
+}
+.img p {
+	font-size: 0.9rem;
+}
+.img .contact {
+	margin-top: 1rem;
+	width: 10rem;
+	height: 3rem;
+	text-align: center;
+}
+
+
+.img .contact a{
+	padding: 0;
+	border: 0;
+}
+
+.img div p {
+	display: inline-block;
+	padding: 0.5rem 0.5rem;
+	border: 2px solid white;
+	font-weight: bold;
+	background-color: #fae28a66;
+}
+
+/* TLO ROZMAZANE*/
+
+.blur {
+	width: 120vw;
+	background-color: #414040;
+	height: 15vh;
+	position: absolute;
+	bottom: -5%;
+	left: -5%;
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+}
+
+/*TEXTY*/
+
+.blur2 {
+	z-index: -1;
+	width: 120vw;
+	background-color: #414040;
+	height: 4vh;
+	left: 0;
+	top: -5%;
+}
+
+.texts {
+	overflow: hidden;
+	min-height: 100vh;
+	background-color: #414040;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.desc {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 310px;
+	padding: 0 1rem;
+}
+
+.texts h2 {
+	display: block;
+	height: 10vh;
+	color: #f7d65f;
+	font-size: 2rem;
+	padding-top: 2rem;
+	position: relative;
+	border-bottom: 1px solid white;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	width: 100%;
+	height: 10vh;
+}
+
+.texts .textUnderBlur {
+	display: inline-block;
+	padding-top: 7rem;
+	padding-bottom: 10rem;
+	width: 90vw;
+	border-bottom: 0;
+	position: relative;
+	color: white;
+}
+
+.texts h2 p {
+	color: rgba(255, 255, 255, 0.593);
+	font-size: 5rem;
+	position: absolute;
+	bottom: 15%;
+}
+
+div.text {
+	padding: 3rem 0 4rem 0;
+	line-height: 2.1rem;
+}
+div.text::first-letter {
+	color: #f7d65f;
+	font-size: 2rem;
+}
+
+/* SEKCJA - CO WYCZYSCIMY?*/
+
+.types {
+	background-color: #414040;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 1rem;
+	position: relative;
+	gap: 2rem;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: 15% center;
+	overflow: hidden;
+}
+
+.types h2 {
+	text-align: center;
+}
+.types img {
+	position: absolute;
+}
+
+
+
+/*Jezeli bedzie wiekszy ekran to zdjecia beda widoczne*/
+
+.types .typesBox {
+	position: relative;
+	opacity: 0;
+	max-width: 600px;
+	width: 80%;
+	height: 5vh;
+	background-color: rgb(255, 255, 255);
+	backdrop-filter: blur(25px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: bold;
+	border-radius: 18px;
+	transition: 2s ease-in-out;
+}
+
+
+.types .typesBox.on{
+	opacity: 1;
+}
+
+
+.types img {
+	opacity: 0;
+	position: absolute;
+}
+.typesBox span {
+	color: #fae18a;
+	position: absolute;
+	left: 1%;
+}
+.last {
+	color: white;
+	background-color: #414040;
+	text-align: center;
+	font-size: 1.6rem;
+	display: inline-block;
+	height: 20vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.textcircle {
+	display: none;
+}
+
+
+footer {
+	height: 5vh;
+	background-color: white;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+}
+
+/*REALIZACJE*/
+
+.galeria {
+	display: flex;
+	background-color: #414040;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 1rem;
+	padding: 0.5rem;
+	padding-bottom: 1rem;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	max-width: 1200px;
+}
+.galeria img {
+	width: 40%;
+	
+}
+
+.galeria img:hover {
+	cursor: pointer;
+}
+
+.galeria img:hover{
+	opacity: 0.5;
+}
+.galeria h2 {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2rem;
+	margin: 3rem 0;
+}
+
+.activeGallery.active{
+	position: absolute;
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80vw;
+	max-width: 700px;
+	max-height: 500px;
+	height: 60vw;
+	background-color: rgb(0, 0, 0);
+	z-index: 100;
+	padding: 5px;
+	background-size: cover;
+}
+.left,.right,.close{
+	display: none;
+	cursor: pointer;
+}
+
+.left,.right{
+	top: 50%;
+	transform: translateY(-50%);
+}
+.left{
+	left: 10px;
+}
+.right,.close{
+	right: 10px;
+}
+.close{
+	top: 10px;
+}
+
+
+.activeGallery.active .left,
+.activeGallery.active .right,
+.activeGallery.active .close{
+	display: inline-block;
+	position: absolute;
+}
+
+
+/*MAPA*/
+.lokalizacja {
+	padding-top: 4rem;
+	font-size: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #414040;
+}
+.lokalizacja h2 {
+	text-align: center;
+	padding: 5rem 0;
+	font-size: 2rem;
+}
+.lokalizacja iframe {
+	width: 100%;
+}
+/* FORMULARZ KONTAKTOWY */
+.sendMessage {
+	height: 80vh;
+	background-color: rgb(84, 84, 84);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contactFrame {
+	width: 70%;
+	height: 80%;
+	background-color: rgb(223, 223, 223);
+	box-shadow: 0px 0px 10px -3px rgb(237, 237, 237);
+}
+
+/* SEKCJA KONTAKT*/
+
+.kontakt {
+	background-color: #f7d65f;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.kontakt div {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0.3rem 0;
+}
+
+.kontakt div i {
+	font-size: 2rem;
+	padding-bottom: 0.3rem;
+}
+
+.keys{
+	margin: 3rem;
+	font-size: 10px;
+	text-align: center;
+	max-width: 400px;
+}
+
+@media (min-width: 600px) {
+	.galeria img {
+		width: 30%;
+	}
+	.img h1 {
+		font-size: 6rem;
+	}
+
+	.img .contact p{
+		width: 12rem;
+	}
+}
+
+@media (min-width: 768px) {
+	nav {
+		display: none;
+	}
+
+	.menu.show{
+		display: none;
+	}
+	header {
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 14vh;
+		top: 0;
+	}
+	.yellowDiv {
+		top: 0;
+	}
+	.img {
+		top: 0;
+		height: 81vh;
+	}
+	.img p {
+		position: relative;
+		bottom: 10px;
+	}
+	.galeria img {
+		width: 20%;
+	}
+	.img {
+		background-image: url('../PiasTech4.jpg');
+		background-repeat: no-repeat;
+		background-position: center 40%;
+	}
+	div.blur {
+		height: 5vh;
+	}
+
+	.circles {
+		width: 2rem;
+		height: 7rem;
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding-left: 0.5rem;
+		gap: 4px;
+		z-index: 2;
+	}
+
+	.circle {
+		cursor: pointer;
+		width: 15px;
+		height: 15px;
+		background-color: rgb(255, 255, 255);
+		border-radius: 50%;
+		position: relative;
+	}
+
+	.textcircle {
+		position: absolute;
+		text-align: center;
+		left: 2vw;
+		top: -5px;
+		width: 90px;
+		display: none;
+		background-color: #fae28ac2;
+	}
+	.circles div:hover {
+		border: 4px solid #fae18a;
+	}
+
+	.circles div:hover > div {
+		display: inline-block;
+	}
+
+	.menu {
+		z-index: 3;
+	}
+
+	.img .contact p{
+		width: 14rem;
+	}
+}
+
+@media (min-width: 900px) {
+
+	.img {
+		gap: 0.5rem;
+	}
+
+	.galeria {
+		gap: 0;
+	}
+
+	header img {
+		width: 100px;
+	}
+
+	.img h1 {
+		font-size: 8rem;
+	}
+
+	.img p {
+		font-size: 1.2rem;
+	}
+	.img div.contact {
+		width: 200px;
+	}
+}
+
+@media (min-width: 1090px){
+	.types img {
+		opacity: 1;
+	}
+	.types .person{
+		right: -3%;
+		width: 30vw;
+	}
+
+	
+	
+}
+
+@media (min-width: 1200px) {
+	.img h1 {
+		font-size: 12rem;
+	}
+
+	div.blur {
+		height: 7vh;
+	}
+	.galeria img {
+		width: 24%;
+	}
+}
